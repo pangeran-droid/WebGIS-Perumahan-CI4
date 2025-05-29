@@ -62,11 +62,14 @@ Import file database/db_gis_perumahan.sql ke phpMyAdmin atau MySQL CLI.
 php spark serve
 
 Akses di browser: http://localhost:8080
+```
 
-🗺️ Peta & Koordinat
+## 🗺️ Peta & Koordinat
+
 Peta menggunakan Leaflet.js, dan input koordinat didapat melalui klik langsung pada peta saat input/edit data.
 
-📦 Teknologi yang Digunakan
+## 📦 Teknologi yang Digunakan
+
 - CodeIgniter 4 (PHP Framework)
 
 - Leaflet.js (Peta Interaktif)
@@ -77,6 +80,6 @@ Peta menggunakan Leaflet.js, dan input koordinat didapat melalui klik langsung p
 
 - JavaScript & Bootstrap 4
 
-📄 Lisensi
+## 📄 Lisensi
+
 Proyek ini bebas digunakan untuk pembelajaran. Silakan modifikasi sesuai kebutuhan. Attribution appreciated.
-```
