@@ -1,0 +1,112 @@
+/* === Sidebar Modern === */
+.sidebar-dark-primary {
+  background-color: #1e293b !important; /* Dark blue-gray */
+}
+
+.brand-link {
+  background-color: #111827 !important;
+  border-bottom: 1px solid #374151;
+}
+
+.brand-link .brand-text {
+  font-weight: bold;
+  color: #f9fafb !important;
+}
+
+.nav-sidebar .nav-link {
+  color: #d1d5db; /* Text muted */
+  font-weight: 500;
+  border-radius: 8px;
+  margin: 2px 8px;
+  transition: 0.2s ease;
+}
+
+.nav-sidebar .nav-link.active {
+  background-color: #3b82f6 !important; /* Blue */
+  color: white !important;
+}
+
+.nav-sidebar .nav-link:hover {
+  background-color: #2563eb !important;
+  color: #fff !important;
+}
+
+/* === Header Navbar === */
+.navbar-indigo {
+  background-color: #1e40af !important; /* Indigo */
+}
+
+/* === Breadcrumb === */
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #9ca3af;
+}
+
+.breadcrumb-item.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* === Footer === */
+.main-footer {
+  background-color: #f1f5f9;
+  color: #334155;
+  border-top: 1px solid #cbd5e1;
+}
+
+/* === Table Adjustments === */
+table.dataTable thead {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #e0f2fe;
+}
+
+/* === Button Enhancements === */
+.btn-primary {
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  border-color: #1e40af;
+}
+
+/* === Page Title Styling === */
+.content-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* === Front end Home === */
+.hero-section {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  padding: 60px 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.features {
+  margin-top: 40px;
+}
+
+.features .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#map {
+  height: 400px;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
