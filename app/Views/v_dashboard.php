@@ -32,30 +32,33 @@
 <?php
 $db = \Config\Database::connect();
 foreach ($keterangan as $key => $value) {
-  $jumlah = $db->table('tbl_penerima')->where('id_keterangan', $value['id_keterangan'])->countAllResults();
-  ?>
-<!-- ./col -->
-<div class="col-lg-3 col-3">
-  <!-- small box -->
-  <div class="small-box <?php if ($value['id_keterangan'] == 1) {
-                                echo 'bg-success';
-                          } elseif ($value['id_keterangan'] == 2) {
-                                echo 'bg-danger';
-                        } ?>">
-    <div class="inner">
-      <h3><?= $jumlah ?></h3>
-      <p><?= $value['keterangan'] ?></p>
+  $jumlah = $db->table('tbl_penerima')
+               ->where('id_keterangan', $value['id_keterangan'])
+               ->countAllResults();
+?>
+  <div class="col-lg-3 col-3">
+    <div class="small-box 
+      <?php 
+        if ($value['id_keterangan'] == 1) {
+          echo 'bg-success';
+        } elseif ($value['id_keterangan'] == 2) {
+          echo 'bg-danger';
+        } 
+      ?>">
+      <div class="inner">
+        <h3><?= $jumlah ?></h3>
+        <p><?= $value['keterangan'] ?></p>
+      </div>
+      <div class="icon">
+        <?php if ($value['id_keterangan'] == 1) { ?>
+          <i class="fas fa-check"></i>
+        <?php } elseif ($value['id_keterangan'] == 2) { ?>
+          <i class="fas fa-times"></i>
+        <?php } ?>
+      </div>
+      <a href="#" class="small-box-footer" style="color: #FFFFFF;">
+        More info <i class="fas fa-arrow-circle-right"></i>
+      </a>
     </div>
-    <div class="icon">
-      <?php if ($value['id_keterangan'] == 1) { ?>
-                <i class="fas fa-check"></i> <?php } 
-            elseif ($value['id_keterangan'] == 2) { ?>
-                <i class="fas fa-times"></i> <?php } ?>
-    </div>
-    <a href="#" class="small-box-footer" style="color: #FFFFFF;">
-      More info <i class="fas fa-arrow-circle-right"></i>
-    </a>
   </div>
-</div>
-
 <?php } ?>

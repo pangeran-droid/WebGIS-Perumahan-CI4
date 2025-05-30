@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Hero Section -->
-  <div class="hero-section text-center">
-    <h1 class="display-4"><strong><?= $web['nama_web'] ?></strong></h1>
+  <div class="hero-section text-center py-5">
+    <h1 class="display-4"><strong><?= esc($web['nama_web']) ?></strong></h1>
     <p class="lead mt-3">
       Sistem Informasi Geografis untuk Pendataan Rumah Penerima Bantuan Pemerintah
     </p>
@@ -12,8 +12,8 @@
 
   <!-- Feature Cards -->
   <div class="row features text-center">
-    <div class="col-md-3">
-      <div class="card shadow-sm">
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
         <div class="card-body">
           <i class="fas fa-map-marked-alt fa-2x mb-2 text-indigo"></i>
           <h5 class="card-title">Pemetaan</h5>
@@ -21,8 +21,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="card shadow-sm">
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
         <div class="card-body">
           <i class="fas fa-search-location fa-2x mb-2 text-indigo"></i>
           <h5 class="card-title">Pencarian</h5>
@@ -30,8 +30,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="card shadow-sm">
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
         <div class="card-body">
           <i class="fas fa-info-circle fa-2x mb-2 text-indigo"></i>
           <h5 class="card-title">Informasi Detail</h5>
@@ -39,8 +39,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="card shadow-sm">
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
         <div class="card-body">
           <i class="fas fa-chart-pie fa-2x mb-2 text-indigo"></i>
           <h5 class="card-title">Analisis Data</h5>
@@ -91,7 +91,7 @@
   var map = L.map('map', {
       center: [-2.5489, 118.0149],
       zoom: 5,
-      layers: [peta1] 
+      layers: [peta1]
   });
 
   var baseMaps = {

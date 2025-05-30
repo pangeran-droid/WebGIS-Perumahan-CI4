@@ -5,22 +5,22 @@
         </div>
         <div class="card-body">
 
-        <?php
-          session();
-          $validation = \Config\Services::validation();
-          ?>
+            <?php
+            session();
+            $validation = \Config\Services::validation();
+            ?>
 
-          <?php if (session()->getFlashdata('errors')) { ?>
-              <div class="alert alert-danger alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                  <h5><i class="icon fas fa-exclamation-triangle"></i> Error!</h5>
-                  <ul>
-                      <?php foreach (session()->getFlashdata('errors') as $error) { ?>
-                          <li><?= esc($error) ?></li>
-                      <?php } ?>
-                  </ul>
-              </div>
-          <?php } ?>
+            <?php if (session()->getFlashdata('errors')) { ?>
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-exclamation-triangle"></i> Error!</h5>
+                    <ul>
+                        <?php foreach (session()->getFlashdata('errors') as $error) { ?>
+                            <li><?= esc($error) ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
 
             <?= form_open_multipart('Penerima/InsertData') ?>
 
@@ -79,19 +79,19 @@
             </div>
 
             <div class="row">
-              <div class="form-group col-md-6 mb-3">
-                  <label>Keterangan</label>
-                  <select name="id_keterangan" class="form-control">
-                      <option value="">--Pilih Keterangan--</option>
-                      <?php foreach ($keterangan as $key => $value) { ?>
-                        <option value="<?= $value['id_keterangan'] ?>" <?= old('id_keterangan') == $value['id_keterangan'] ? 'selected' : '' ?>>
-                            <?= $value['keterangan'] ?>
-                        </option>
-                      <?php } ?>
-                  </select>
-                  <p class="text-danger"><?= $validation->hasError('id_keterangan') ? $validation->getError('id_keterangan') : '' ?></p>
-              </div>
-              <div class="col-md-6 mb-3">
+                <div class="form-group col-md-6 mb-3">
+                    <label>Keterangan</label>
+                    <select name="id_keterangan" class="form-control">
+                        <option value="">--Pilih Keterangan--</option>
+                        <?php foreach ($keterangan as $key => $value) { ?>
+                            <option value="<?= $value['id_keterangan'] ?>" <?= old('id_keterangan') == $value['id_keterangan'] ? 'selected' : '' ?>>
+                                <?= $value['keterangan'] ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                    <p class="text-danger"><?= $validation->hasError('id_keterangan') ? $validation->getError('id_keterangan') : '' ?></p>
+                </div>
+                <div class="col-md-6 mb-3">
                     <label>Jenis Bantuan</label>
                     <input name="jenis_bantuan" value="<?= old('jenis_bantuan') ?>" placeholder="Jenis Bantuan" class="form-control">
                     <p class="text-danger"><?= $validation->hasError('jenis_bantuan') ? $validation->getError('jenis_bantuan') : '' ?></p>
@@ -106,38 +106,36 @@
             </div>
 
             <div class="row">
-              <div class="col-sm-4">
-                  <div class="form-group">
-                    <label>Provinsi</label>
-                    <select name="id_provinsi" id="id_provinsi" class="form-control select2" style="width: 100%;">
-                      <option value=""> --Pilih Provinsi-- </option>
-                      <?php foreach ($provinsi as $key => $value) { ?>
-                        <option value="<?= $value['id_provinsi'] ?>" <?= old('id_provinsi') == $value['id_provinsi'] ? 'selected' : '' ?>>
-                            <?= $value['nama_provinsi'] ?>
-                        </option>
-                      <?php } ?>
-                    </select>
-                  <p class="text-danger"><?= $validation->hasError('id_provinsi') ? $validation->getError('id_provinsi') : '' ?></p>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Provinsi</label>
+                        <select name="id_provinsi" id="id_provinsi" class="form-control select2" style="width: 100%;">
+                            <option value=""> --Pilih Provinsi-- </option>
+                            <?php foreach ($provinsi as $key => $value) { ?>
+                                <option value="<?= $value['id_provinsi'] ?>" <?= old('id_provinsi') == $value['id_provinsi'] ? 'selected' : '' ?>>
+                                    <?= $value['nama_provinsi'] ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                        <p class="text-danger"><?= $validation->hasError('id_provinsi') ? $validation->getError('id_provinsi') : '' ?></p>
+                    </div>
                 </div>
-              </div>
-
-              <div class="col-sm-4">
-                  <div class="form-group">
-                    <label>Kabupaten</label>
-                    <select name="id_kabupaten" id="id_kabupaten" class="form-control select2">
-                    </select>
-                  <p class="text-danger"><?= $validation->hasError('id_kabupaten') ? $validation->getError('id_kabupaten') : '' ?></p>
-                </div>
-              </div>
 
                 <div class="col-sm-4">
-                  <div class="form-group">
-                    <label>Kecamatan</label>
-                    <select name="id_kecamatan" id="id_kecamatan" class="form-control select2">
-                    </select>
-                  <p class="text-danger"><?= $validation->hasError('id_kecamatan') ? $validation->getError('id_kecamatan') : '' ?></p>
+                    <div class="form-group">
+                        <label>Kabupaten</label>
+                        <select name="id_kabupaten" id="id_kabupaten" class="form-control select2"></select>
+                        <p class="text-danger"><?= $validation->hasError('id_kabupaten') ? $validation->getError('id_kabupaten') : '' ?></p>
+                    </div>
                 </div>
-              </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Kecamatan</label>
+                        <select name="id_kecamatan" id="id_kecamatan" class="form-control select2"></select>
+                        <p class="text-danger"><?= $validation->hasError('id_kecamatan') ? $validation->getError('id_kecamatan') : '' ?></p>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
@@ -151,7 +149,9 @@
                     <select name="id_wilayah" class="form-control">
                         <option value="">--Pilih Wilayah Administrasi--</option>
                         <?php foreach ($wilayah as $key => $value) { ?>
-                            <option value="<?= $value['id_wilayah'] ?>" <?= old('id_wilayah') == $value['id_wilayah'] ? 'selected' : '' ?>><?= $value['nama_wilayah'] ?></option>
+                            <option value="<?= $value['id_wilayah'] ?>" <?= old('id_wilayah') == $value['id_wilayah'] ? 'selected' : '' ?>>
+                                <?= $value['nama_wilayah'] ?>
+                            </option>
                         <?php } ?>
                     </select>
                     <p class="text-danger"><?= $validation->hasError('id_wilayah') ? $validation->getError('id_wilayah') : '' ?></p>
@@ -171,7 +171,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
   $(document).ready(function() {

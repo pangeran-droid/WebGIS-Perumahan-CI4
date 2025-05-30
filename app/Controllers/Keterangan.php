@@ -18,26 +18,29 @@ class Keterangan extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'Keterangan',
-            'menu' => 'keterangan', 
-            'page' => 'v_keterangan',
+            'judul'      => 'Keterangan',
+            'menu'       => 'keterangan',
+            'page'       => 'v_keterangan',
             'keterangan' => $this->ModelKeterangan->AllData(),
         ];
+
         return view('v_back_end', $data);
     }
 
     public function UpdateData($id_keterangan)
     {
-        $marker = $this->request->getFile('marker');
-        $name_file = $marker->getRandomName();
+        $marker     = $this->request->getFile('marker');
+        $name_file  = $marker->getRandomName();
+
         $data = [
-            'id_keterangan'=> $id_keterangan,
-            'marker' => $name_file,
+            'id_keterangan' => $id_keterangan,
+            'marker'        => $name_file,
         ];
 
         $marker->move('marker', $name_file);
         $this->ModelKeterangan->UpdateData($id_keterangan, $data);
+
         session()->setFlashdata('update', 'Marker Berhasil Di Tambahkan !!');
-            return redirect()->to('Keterangan');
+        return redirect()->to('Keterangan');
     }
 }

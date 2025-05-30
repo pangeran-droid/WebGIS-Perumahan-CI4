@@ -84,10 +84,10 @@
           <p class="text-danger"><?= $validation->getError('id_keterangan') ?></p>
         </div>
         <div class="col-md-6 mb-3">
-            <label>Jenis Bantuan</label>
-            <input name="jenis_bantuan" value="<?= old('jenis_bantuan', $penerima['jenis_bantuan']) ?>" class="form-control">
-            <p class="text-danger"><?= $validation->getError('jenis_bantuan') ?></p>
-          </div>
+          <label>Jenis Bantuan</label>
+          <input name="jenis_bantuan" value="<?= old('jenis_bantuan', $penerima['jenis_bantuan']) ?>" class="form-control">
+          <p class="text-danger"><?= $validation->getError('jenis_bantuan') ?></p>
+        </div>
       </div>
 
       <div class="form-group mb-3">
@@ -173,7 +173,6 @@
     });
   });
 
-  // Leaflet map init
   var map = L.map('map').setView([<?= $web['coordinat_wilayah'] ?>], <?= $web['zoom_view'] ?>);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'

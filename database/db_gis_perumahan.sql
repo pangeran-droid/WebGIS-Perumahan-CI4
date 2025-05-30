@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 29 Bulan Mei 2025 pada 15.43
+-- Waktu pembuatan: 30 Bulan Mei 2025 pada 11.35
 -- Versi server: 8.0.30
 -- Versi PHP: 8.1.10
 
@@ -7829,7 +7829,7 @@ ALTER TABLE `tbl_keterangan`
 -- AUTO_INCREMENT untuk tabel `tbl_penerima`
 --
 ALTER TABLE `tbl_penerima`
-  MODIFY `id_penerima` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_penerima` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_setting`
@@ -7841,13 +7841,13 @@ ALTER TABLE `tbl_setting`
 -- AUTO_INCREMENT untuk tabel `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_wilayah`
 --
 ALTER TABLE `tbl_wilayah`
-  MODIFY `id_wilayah` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_wilayah` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

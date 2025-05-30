@@ -17,10 +17,10 @@ class Penerima extends BaseController
 
     public function __construct()
     {
-        $this->ModelPenerima = new ModelPenerima();
-        $this->ModelSetting = new ModelSetting();
-        $this->ModelWilayah = new ModelWilayah();
-        $this->ModelKeterangan = new ModelKeterangan();
+        $this->ModelPenerima    = new ModelPenerima();
+        $this->ModelSetting     = new ModelSetting();
+        $this->ModelWilayah     = new ModelWilayah();
+        $this->ModelKeterangan  = new ModelKeterangan();
     }
 
     public function index()
@@ -37,13 +37,13 @@ class Penerima extends BaseController
     public function Input()
     {
         $data = [
-            'judul'     => 'Input Penerima',
-            'menu'      => 'penerima',
-            'page'      => 'penerima/v_input',
-            'web'       => $this->ModelSetting->DataWeb(),
-            'provinsi'  => $this->ModelPenerima->allProvinsi(),
-            'wilayah'   => $this->ModelWilayah->AllData(),
-            'keterangan'=> $this->ModelKeterangan->AllData(),
+            'judul'         => 'Input Penerima',
+            'menu'          => 'penerima',
+            'page'          => 'penerima/v_input',
+            'web'           => $this->ModelSetting->DataWeb(),
+            'provinsi'      => $this->ModelPenerima->allProvinsi(),
+            'wilayah'       => $this->ModelWilayah->AllData(),
+            'keterangan'    => $this->ModelKeterangan->AllData(),
         ];
         return view('v_back_end', $data);
     }
@@ -120,9 +120,9 @@ class Penerima extends BaseController
                 'label' => 'Foto Rumah',
                 'rules' => 'uploaded[foto]|max_size[foto,1024]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'uploaded' => '{field} Wajib Diisi !!',
-                    'max_size' => 'Ukuran {field} maksimal 1024 KB !!',
-                    'mime_in' => 'Format {field} harus JPG, JPEG, atau PNG !!'
+                    'uploaded'  => '{field} Wajib Diisi !!',
+                    'max_size'  => 'Ukuran {field} maksimal 1024 KB !!',
+                    'mime_in'   => 'Format {field} harus JPG, JPEG, atau PNG !!'
                 ]
             ],
         ]);
@@ -135,10 +135,9 @@ class Penerima extends BaseController
         $foto = $this->request->getFile('foto');
         $nama_file_foto = $foto->getRandomName();
 
-
         $data = [
             'nama_penerima' => $this->request->getPost('nama_penerima'),
-            'nomor_ktp'        => $this->request->getPost('nomor_ktp'),
+            'nomor_ktp'     => $this->request->getPost('nomor_ktp'),
             'alamat'        => $this->request->getPost('alamat'),
             'coordinat'     => $this->request->getPost('coordinat'),
             'id_keterangan' => $this->request->getPost('id_keterangan'),
@@ -148,7 +147,7 @@ class Penerima extends BaseController
             'jenis_atap'    => $this->request->getPost('jenis_atap'),
             'jenis_dinding' => $this->request->getPost('jenis_dinding'),
             'jenis_lantai'  => $this->request->getPost('jenis_lantai'),
-            'jenis_bantuan'  => $this->request->getPost('jenis_bantuan'),
+            'jenis_bantuan' => $this->request->getPost('jenis_bantuan'),
             'id_wilayah'    => $this->request->getPost('id_wilayah'),
             'foto'          => $nama_file_foto,
         ];
@@ -160,7 +159,6 @@ class Penerima extends BaseController
         return redirect()->to('Penerima');
     }
 
-    // Ambil kabupaten berdasarkan provinsi
     public function Kabupaten()
     {
         $id_provinsi = $this->request->getPost('id_provinsi');
@@ -171,7 +169,6 @@ class Penerima extends BaseController
         }
     }
 
-    // Ambil kecamatan berdasarkan kabupaten
     public function Kecamatan()
     {
         $id_kabupaten = $this->request->getPost('id_kabupaten');
@@ -185,14 +182,14 @@ class Penerima extends BaseController
     public function Edit($id_penerima)
     {
         $data = [
-            'judul'     => 'Edit Data Penerima',
-            'menu'      => 'penerima',
-            'page'      => 'penerima/v_edit',
-            'web'       => $this->ModelSetting->DataWeb(),
-            'provinsi'  => $this->ModelPenerima->allProvinsi(),
-            'wilayah'   => $this->ModelWilayah->AllData(),
-            'keterangan'=> $this->ModelKeterangan->AllData(),
-            'penerima'  => $this->ModelPenerima->DetailData($id_penerima),
+            'judul'         => 'Edit Data Penerima',
+            'menu'          => 'penerima',
+            'page'          => 'penerima/v_edit',
+            'web'           => $this->ModelSetting->DataWeb(),
+            'provinsi'      => $this->ModelPenerima->allProvinsi(),
+            'wilayah'       => $this->ModelWilayah->AllData(),
+            'keterangan'    => $this->ModelKeterangan->AllData(),
+            'penerima'      => $this->ModelPenerima->DetailData($id_penerima),
         ];
         return view('v_back_end', $data);
     }
@@ -201,24 +198,24 @@ class Penerima extends BaseController
     {
         if ($this->validate([
             'nama_penerima' => ['label' => 'Nama Penerima', 'rules' => 'required'],
-            'nomor_ktp' => ['label' => 'Nomor KTP', 'rules' => 'required'],
-            'alamat' => ['label' => 'Alamat', 'rules' => 'required'],
-            'coordinat' => ['label' => 'Koordinat', 'rules' => 'required'],
+            'nomor_ktp'     => ['label' => 'Nomor KTP', 'rules' => 'required'],
+            'alamat'        => ['label' => 'Alamat', 'rules' => 'required'],
+            'coordinat'     => ['label' => 'Koordinat', 'rules' => 'required'],
             'id_keterangan' => ['label' => 'Keterangan', 'rules' => 'required'],
-            'id_provinsi' => ['label' => 'Provinsi', 'rules' => 'required'],
-            'id_kabupaten' => ['label' => 'Kabupaten', 'rules' => 'required'],
-            'id_kecamatan' => ['label' => 'Kecamatan', 'rules' => 'required'],
-            'jenis_atap' => ['label' => 'Jenis Atap', 'rules' => 'required'],
+            'id_provinsi'   => ['label' => 'Provinsi', 'rules' => 'required'],
+            'id_kabupaten'  => ['label' => 'Kabupaten', 'rules' => 'required'],
+            'id_kecamatan'  => ['label' => 'Kecamatan', 'rules' => 'required'],
+            'jenis_atap'    => ['label' => 'Jenis Atap', 'rules' => 'required'],
             'jenis_dinding' => ['label' => 'Jenis Dinding', 'rules' => 'required'],
-            'jenis_lantai' => ['label' => 'Jenis Lantai', 'rules' => 'required'],
+            'jenis_lantai'  => ['label' => 'Jenis Lantai', 'rules' => 'required'],
             'jenis_bantuan' => ['label' => 'Jenis Bantuan', 'rules' => 'required'],
-            'id_wilayah' => ['label' => 'Wilayah Administrasi', 'rules' => 'required'],
+            'id_wilayah'    => ['label' => 'Wilayah Administrasi', 'rules' => 'required'],
             'foto' => [
                 'label' => 'Foto Rumah',
                 'rules' => 'max_size[foto,1024]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Ukuran {field} maksimal 1024 KB !!',
-                    'mime_in' => 'Format {field} harus JPG, JPEG, atau PNG !!',
+                    'mime_in'  => 'Format {field} harus JPG, JPEG, atau PNG !!',
                 ]
             ],
         ])) {
@@ -245,11 +242,11 @@ class Penerima extends BaseController
                 'jenis_atap'    => $this->request->getPost('jenis_atap'),
                 'jenis_dinding' => $this->request->getPost('jenis_dinding'),
                 'jenis_lantai'  => $this->request->getPost('jenis_lantai'),
-                'jenis_bantuan'  => $this->request->getPost('jenis_bantuan'),
+                'jenis_bantuan' => $this->request->getPost('jenis_bantuan'),
                 'id_wilayah'    => $this->request->getPost('id_wilayah'),
                 'foto'          => $nama_file_foto,
             ];
-            
+
             $this->ModelPenerima->UpdateData($id_penerima, $data);
             session()->setFlashdata('update', 'Data Berhasil Di Update !!');
             return redirect()->to('Penerima');
@@ -262,18 +259,18 @@ class Penerima extends BaseController
     public function Delete($id_penerima)
     {
         $penerima = $this->ModelPenerima->DetailData($id_penerima);
-    
+
         if (!empty($penerima['foto'])) {
             $fotoPath = FCPATH . 'foto/' . $penerima['foto'];
             if (file_exists($fotoPath)) {
                 unlink($fotoPath);
             }
         }
-    
+
         $this->ModelPenerima->DeleteData($id_penerima);
         session()->setFlashdata('delete', 'Data Berhasil Di Hapus !!');
         return redirect()->to('Penerima');
-    }    
+    }
 
     public function Detail($id_penerima)
     {
@@ -286,5 +283,4 @@ class Penerima extends BaseController
         ];
         return view('v_back_end', $data);
     }
-
 }

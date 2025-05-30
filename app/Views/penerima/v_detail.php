@@ -1,73 +1,93 @@
 <div class="col-md-12">
     <div class="card card-outline card-primary">
-        <div class="card-header">
-            <h3 class="card-title"><?= $judul ?></h3>
-            <!-- /.card-tools -->
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="card-title m-0"><?= $judul ?></h3>
+            
         </div>
-        <!-- /.card-header -->
-         <div class="card-body">
-            <div class="row">
-                <div class="col-sm-6">
-                <div id="map" style="width: 100%; height: 500px;"></div>
-                </div>
 
-                <div class="col-sm-6">
-                    <img src="<?= base_url('foto/' . $penerima['foto'] ) ?>" width="100%" height="500px">
-                </div>
-
-                <div class="col-sm-12">
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Nama Penerima</th>
-                            <th width="30px">:</th>
-                            <td><?= $penerima['nama_penerima'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Nomor KTP Penerima</th>
-                            <th>:</th>
-                            <td><?= $penerima['nomor_ktp'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Alamat Penerima</th>
-                            <th>:</th>
-                            <td><?= $penerima['alamat'] ?>,<?= $penerima['nama_kecamatan'] ?>,<?= $penerima['nama_kabupaten'] ?>,<?= $penerima['nama_provinsi'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Jenis Atap</th>
-                            <th>:</th>
-                            <td><?= $penerima['jenis_atap'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Jenis Dinding</th>
-                            <th>:</th>
-                            <td><?= $penerima['jenis_dinding'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Jenis Lantai</th>
-                            <th>:</th>
-                            <td><?= $penerima['jenis_lantai'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Keterangan</th>
-                            <th>:</th>
-                            <td><?= $penerima['keterangan'] ?></td>
-                        </tr>
-                        <tr>
-                            <th>Jenis Bantuan</th>
-                            <th>:</th>
-                            <td><?= $penerima['jenis_bantuan'] ?></td>
-                        </tr>
-                        
-                    </table>
-                    <a href="<?= base_url('Penerima')?>" class="btn btn-success btn-flat">Kembali</a>
+        <div class="card-body">
+            <div>
+                <button class="btn btn-sm btn-outline-primary" onclick="showMap()">Tampilkan Peta</button>
+                <button class="btn btn-sm btn-outline-secondary" onclick="showImage()">Tampilkan Foto</button>
+            </div>
+            
+            <div class="mb-4">
+                <div id="map-container" style="display: block;">
+                    <div id="map" style="width: 100%; height: 500px; border-radius: 8px;"></div>
                 </div>
             </div>
 
-         </div>
+            <div class="mb-4">
+                <div id="image-container" style="display: none;">
+                    <img src="<?= base_url('foto/' . $penerima['foto']) ?>" class="img-fluid rounded" style="width: 100%; height: 500px; object-fit: cover;">
+                </div>
+            </div>
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>Nama Penerima</th>
+                    <th width="30px">:</th>
+                    <td><?= $penerima['nama_penerima'] ?></td>
+                </tr>
+                <tr>
+                    <th>Nomor KTP Penerima</th>
+                    <th>:</th>
+                    <td><?= $penerima['nomor_ktp'] ?></td>
+                </tr>
+                <tr>
+                    <th>Alamat Penerima</th>
+                    <th>:</th>
+                    <td><?= $penerima['alamat'] ?>, <?= $penerima['nama_kecamatan'] ?>, <?= $penerima['nama_kabupaten'] ?>, <?= $penerima['nama_provinsi'] ?></td>
+                </tr>
+                <tr>
+                    <th>Jenis Atap</th>
+                    <th>:</th>
+                    <td><?= $penerima['jenis_atap'] ?></td>
+                </tr>
+                <tr>
+                    <th>Jenis Dinding</th>
+                    <th>:</th>
+                    <td><?= $penerima['jenis_dinding'] ?></td>
+                </tr>
+                <tr>
+                    <th>Jenis Lantai</th>
+                    <th>:</th>
+                    <td><?= $penerima['jenis_lantai'] ?></td>
+                </tr>
+                <tr>
+                    <th>Keterangan</th>
+                    <th>:</th>
+                    <td><?= $penerima['keterangan'] ?></td>
+                </tr>
+                <tr>
+                    <th>Jenis Bantuan</th>
+                    <th>:</th>
+                    <td><?= $penerima['jenis_bantuan'] ?></td>
+                </tr>
+            </table>
+
+            <div class="mt-3 text-end">
+                <a href="<?= base_url('Penerima') ?>" class="btn btn-success btn-flat">Kembali</a>
+            </div>
+            
+        </div>
     </div>
 </div>
 
+<script>
+    function showMap() {
+        document.getElementById("map-container").style.display = "block";
+        document.getElementById("image-container").style.display = "none";
+        setTimeout(() => {
+            map.invalidateSize(); 
+        }, 200);
+    }
 
+    function showImage() {
+        document.getElementById("map-container").style.display = "none";
+        document.getElementById("image-container").style.display = "block";
+    }
+</script>
 
 <script>
     var peta1 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

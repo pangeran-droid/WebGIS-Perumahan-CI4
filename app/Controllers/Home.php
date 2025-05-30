@@ -16,22 +16,23 @@ class Home extends BaseController
 
     public function __construct()
     {
-        $this->ModelSetting = new ModelSetting();
-        $this->ModelWilayah = new ModelWilayah();
-        $this->ModelPenerima = new ModelPenerima();
+        $this->ModelSetting    = new ModelSetting();
+        $this->ModelWilayah    = new ModelWilayah();
+        $this->ModelPenerima   = new ModelPenerima();
         $this->ModelKeterangan = new ModelKeterangan();
     }
 
     public function index(): string
     {
         $data = [
-            'judul' => 'Home',
-            'page' => 'v_home',
-            'web' => $this->ModelSetting->DataWeb(),
-            'wilayah' => $this->ModelWilayah->AllData(),
-            'penerima' => $this->ModelPenerima->AllData(),
+            'judul'      => 'Home',
+            'page'       => 'v_home',
+            'web'        => $this->ModelSetting->DataWeb(),
+            'wilayah'    => $this->ModelWilayah->AllData(),
+            'penerima'   => $this->ModelPenerima->AllData(),
             'keterangan' => $this->ModelKeterangan->AllData(),
         ];
+
         return view('v_front_end', $data);
     }
 }
