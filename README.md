@@ -1,4 +1,4 @@
-# GIS Perumahan Penerima Bantuan Pemerintah - CodeIgniter 4
+# Web GIS Perumahan Penerima Bantuan Pemerintah - CodeIgniter 4
 
 Sistem Informasi Geografis (SIG) berbasis web untuk mendata dan memvisualisasikan lokasi perumahan yang menerima bantuan dari pemerintah. Aplikasi ini dibangun menggunakan framework **CodeIgniter 4** dan library **Leaflet.js** untuk menampilkan peta interaktif.
 
@@ -34,31 +34,41 @@ Sistem Informasi Geografis (SIG) berbasis web untuk mendata dan memvisualisasika
 1. **Clone repository:**
 
 ```bash
-git clone https://github.com/pangeran-droid/gis-perumahan-ci4.git
-cd gis-perumahan-ci4
+git clone https://github.com/pangeran-droid/WebGIS-Perumahan-CI4.git
+cd WebGIS-Perumahan-CI4
+```
 
 2. **Install dependency:**
 
+```bash
 composer install
+```
 
 3. **Copy konfigurasi env:**
 
+```bash
 cp .env.example .env
+```
 
 4. **Edit .env untuk sesuaikan database:**
 
+```bash
 database.default.hostname = localhost
 database.default.database = nama_database
 database.default.username = root
 database.default.password =
 database.default.DBDriver = MySQLi
+```
 
 5. **Import SQL ke database:**
 
+```bash
 Import file database/db_gis_perumahan.sql ke phpMyAdmin atau MySQL CLI.
+```
 
 6. **Jalankan server:**
 
+```bash
 php spark serve
 
 Akses di browser: http://localhost:8080
