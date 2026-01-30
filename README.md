@@ -1,6 +1,6 @@
-# Web GIS Perumahan Penerima Bantuan Pemerintah - CodeIgniter 4
+# WebGIS Pemetaan Perumahan - CodeIgniter 4
 
-Sistem Informasi Geografis (SIG) berbasis web untuk mendata dan memvisualisasikan lokasi perumahan yang menerima bantuan dari pemerintah. Aplikasi ini dibangun menggunakan framework **CodeIgniter 4** dan library **Leaflet.js** untuk menampilkan peta interaktif.
+Sistem Informasi Geografis (GIS) berbasis web untuk mendata dan memvisualisasikan lokasi perumahan yang menerima bantuan dari pemerintah. Aplikasi ini dibangun menggunakan framework **CodeIgniter 4** dan library **Leaflet.js** untuk menampilkan peta interaktif.
 
 ---
 
@@ -18,6 +18,7 @@ Sistem Informasi Geografis (SIG) berbasis web untuk mendata dan memvisualisasika
 
 ## 🗂️ Struktur Proyek
 
+```bash
 ├── app/ # Logika utama aplikasi (Controllers, Models, Views)
 ├── public/ # Root web server (akses browser)
 ├── writable/ # Direktori penyimpanan sementara (log, upload, cache)
@@ -26,6 +27,7 @@ Sistem Informasi Geografis (SIG) berbasis web untuk mendata dan memvisualisasika
 ├── .env # Konfigurasi lingkungan (tidak diupload)
 ├── composer.json # Daftar dependency PHP
 ├── README.md # Dokumentasi proyek
+```
 
 ---
 
