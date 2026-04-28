@@ -103,27 +103,13 @@ Peta menggunakan Leaflet.js, dan input koordinat didapat melalui klik langsung p
 
 ## 👁️ Pratinjau
 
-`home`
+| Home | Login |
+|---|---|
+| <img src="public/preview/home.png" width="400"> | <img src="public/preview/login.png" width="400"> |
 
-<img src="public/preview/home.png">
-
-***
-
-`login`
-
-<img src="public/preview/login.png">
-
-***
-
-`register`
-
-<img src="public/preview/register.pngg">
-
-***
-
-`dashboard`
-
-<img src="public/preview/dashboard.png">
+| Register | Dashboard |
+|---|---|
+| <img src="public/preview/register.png" width="400"> | <img src="public/preview/dashboard.png" width="400"> |
 
 ## 📄 Lisensi
 
