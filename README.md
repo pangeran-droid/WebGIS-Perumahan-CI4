@@ -101,6 +101,30 @@ Peta menggunakan Leaflet.js, dan input koordinat didapat melalui klik langsung p
 
 - JavaScript & Bootstrap 4
 
+## 👁️ Pratinjau
+
+`home`
+
+<img src="public/preview/home.png">
+
+***
+
+`login`
+
+<img src="public/preview/login.png">
+
+***
+
+`register`
+
+<img src="public/preview/register.pngg">
+
+***
+
+`dashboard`
+
+<img src="public/preview/dashboard.png">
+
 ## 📄 Lisensi
 
 Proyek ini bebas digunakan untuk pembelajaran. Silakan modifikasi sesuai kebutuhan. Attribution appreciated.
