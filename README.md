@@ -27,15 +27,16 @@ Sistem Informasi Geografis (GIS) berbasis web untuk mendata dan memvisualisasika
 
 ## 🗂️ Struktur Proyek
 
-```bash
-├── app/ # Logika utama aplikasi (Controllers, Models, Views)
-├── public/ # Root web server (akses browser)
-├── writable/ # Direktori penyimpanan sementara (log, upload, cache)
-├── database/ # File SQL backup untuk import database
-├── vendor/ # Dependency hasil install composer (tidak diupload)
-├── .env # Konfigurasi lingkungan (tidak diupload)
-├── composer.json # Daftar dependency PHP
-├── README.md # Dokumentasi proyek
+```
+/app
+  ├── Controllers
+  ├── Models
+  ├── Views
+  └── Config
+/public
+  └── AdminLTE/
+/writable
+.env
 ```
 
 ---
