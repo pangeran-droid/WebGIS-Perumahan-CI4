@@ -1,73 +1,60 @@
-<div class="container py-5">
-
-  <!-- HERO -->
-  <div class="hero-modern text-center mb-5">
-    <h1 class="fw-bold"><?= esc($web['nama_web']) ?></h1>
-    <p class="text-muted mt-2">
-      Sistem Informasi Geografis Pendataan Rumah Penerima Bantuan Pemerintah
+<div class="container">
+  <!-- Hero Section -->
+  <div class="hero-section text-center py-5">
+    <h1 class="display-4"><strong><?= esc($web['nama_web']) ?></strong></h1>
+    <p class="lead mt-3">
+      Sistem Informasi Geografis untuk Pendataan Rumah Penerima Bantuan Pemerintah
     </p>
+    <a href="<?= base_url('Auth/Login') ?>" class="btn btn-light btn-lg mt-4">
+      <i class="fas fa-sign-in-alt mr-2"></i> Masuk ke Sistem
+    </a>
+  </div>
 
-    <div class="mt-4">
-      <a href="<?= base_url('Auth/Login') ?>" class="btn btn-primary px-4 shadow-sm">
-        <i class="fas fa-sign-in-alt me-2"></i> Masuk Sistem
-      </a>
+  <!-- Feature Cards -->
+  <div class="row features text-center">
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <i class="fas fa-map-marked-alt fa-2x mb-2 text-indigo"></i>
+          <h5 class="card-title">Pemetaan</h5>
+          <p class="card-text">Lihat sebaran lokasi penerima bantuan secara geografis.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <i class="fas fa-search-location fa-2x mb-2 text-indigo"></i>
+          <h5 class="card-title">Pencarian</h5>
+          <p class="card-text">Cari lokasi bantuan berdasarkan nama atau wilayah.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <i class="fas fa-info-circle fa-2x mb-2 text-indigo"></i>
+          <h5 class="card-title">Informasi Detail</h5>
+          <p class="card-text">Dapatkan informasi lengkap tentang penerima bantuan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <i class="fas fa-chart-pie fa-2x mb-2 text-indigo"></i>
+          <h5 class="card-title">Analisis Data</h5>
+          <p class="card-text">Bantu analisis dan pengambilan keputusan berbasis peta.</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- STATS -->
-  <div class="row text-center mb-5">
-    <div class="col-md-4">
-      <div class="stat-box">
-        <h3><?= count($penerima) ?></h3>
-        <p>Total Penerima</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="stat-box">
-        <h3>34</h3>
-        <p>Provinsi</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="stat-box">
-        <h3><?= date('Y') ?></h3>
-        <p>Tahun Data</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- FEATURES -->
-  <div class="row g-4 mb-5">
-
-    <?php 
-    $features = [
-      ['icon'=>'fa-map-marked-alt','title'=>'Pemetaan','desc'=>'Visualisasi lokasi bantuan secara real-time'],
-      ['icon'=>'fa-search-location','title'=>'Pencarian','desc'=>'Temukan data berdasarkan wilayah & nama'],
-      ['icon'=>'fa-info-circle','title'=>'Detail Data','desc'=>'Informasi lengkap penerima bantuan'],
-      ['icon'=>'fa-chart-line','title'=>'Analisis','desc'=>'Insight data untuk pengambilan keputusan'],
-    ];
-    ?>
-
-    <?php foreach($features as $f): ?>
-    <div class="col-md-6 col-lg-3">
-      <div class="feature-modern">
-        <i class="fas <?= $f['icon'] ?>"></i>
-        <h6><?= $f['title'] ?></h6>
-        <p><?= $f['desc'] ?></p>
-      </div>
-    </div>
-    <?php endforeach; ?>
-
-  </div>
-
-  <!-- MAP -->
-  <div class="map-card">
-    <div class="map-header">
-      <h5>Persebaran Lokasi Penerima Bantuan</h5>
-    </div>
+  <!-- Peta -->
+  <div class="mt-5">
+    <h4 class="mb-3">Persebaran Lokasi Penerima Bantuan</h4>
     <div id="map"></div>
   </div>
-
 </div>
 
 <!-- Leaflet Map Script -->
